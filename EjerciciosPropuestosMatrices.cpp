@@ -34,6 +34,7 @@ void matrizTranspuesta(){
 
 void determinante(){
 	int inicial[3][3] = {};
+	int sarrus;
 	for(int i = 0; i < 3; i++){
 		for(int j = 0; j < 3; j++){
 			//cout << "Ingresa un numero: ";
@@ -49,7 +50,10 @@ void determinante(){
 		}
 	}
 	
-	cout << "El determinante de A es: " << ((inicial[0][0] * inicial [1][1] * inicial[2][2]) + (inicial[1][0] * inicial[2][1] * inicial[0][2]) + (inicial[2][0] + inicial[0][1] + inicial[1][2])) - ((inicial[0][2] * inicial [1][1] * inicial[2][0]) + (inicial[1][2] * inicial[2][1] * inicial[0][0]) + (inicial[2][2] + inicial[0][1] + inicial[1][0]));
+	sarrus = (inicial[0][0] * inicial[1][1] *  inicial[2][2]) + (inicial[0][1] * inicial[1][2] * inicial [2][0]) + (inicial[0][2] * inicial[1][0] * inicial[2][1])
+	- (inicial[0][2] * inicial[1][1] * inicial[2][0]) - (inicial[0][0] * inicial[1][2] * inicial[2][1]) - (inicial[0][1] * inicial[1][0] * inicial[2][2]);
+	cout << "\nEl determinante es: " << sarrus;
+	//Forma de automatizar el método de Sarrus
 }
 
 void menu(int r){
